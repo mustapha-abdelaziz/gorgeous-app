@@ -27,11 +27,14 @@
       <div class="cart__products">
         <div class="product-items" v-for="item in cart.items" :key="item.id">
           <div class="items__image">
+
             <img :src="item.image.src" />
+            <base-badge>x {{ item.orderedQty }}</base-badge>
+
           </div>
           <div class="items__content">
-            <span
-              ><b>{{ item.orderedQty }}x {{ item.title }}</b></span
+            <span class="content__title"
+              ><b> {{ item.title }}</b></span
             >
             <br />
             <span>${{ item.price }}</span>
@@ -51,7 +54,7 @@
         </h2>
       </div>
       <div class="footer__btn">
-        <button id="checkout">Checkout</button>
+        <button><b>Checkout</b></button>
       </div>
     </div>
   </div>
@@ -104,7 +107,7 @@ export default {
 }
 
 .panel-container {
-  transform: translateX(500px);
+  transform: translateX(900px);
   position: fixed;
   right: 0;
   top: 0;
@@ -113,7 +116,7 @@ export default {
   justify-content: space-between;
   height: 100vh;
   background: #fafafa;
-  width: 30vw;
+  width: 460px;
   border-left: 1px solid #d9d9d9;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -125,7 +128,7 @@ export default {
 }
 
 .panel-container__header {
-  width: inherit;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -171,6 +174,14 @@ export default {
   margin: 5px 10px 20px 10px;
 }
 
+.content__title{
+  font-size: .9em;
+}
+
+.items__image{
+  position: relative;
+}
+
 .items__image img {
   position: relative;
   width: 100%;
@@ -182,7 +193,7 @@ export default {
   flex-direction: column;
   align-items: center;
   background: white;
-  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
   padding: 1em 2em 3em 2em;
 }
 .footer__captions {
@@ -201,6 +212,7 @@ export default {
   background-color: black;
   color: white;
   width: 100%;
+  height: 50px;
   border-radius: 5px;
 }
 
@@ -260,7 +272,7 @@ export default {
 
 button {
   width: 100%;
-  height: 40px;
+  height: 35px;
   background-color: white;
   border: none;
   cursor: pointer;
@@ -269,5 +281,48 @@ button {
 
 button:hover {
   background-color: rgb(228, 228, 228);
+}
+
+@media screen and (max-width: 375px) {
+  .footer__captions h2 {
+    font-size: 1em;
+  }
+  .panel-container__footer {
+    padding: 1.3em 1em;
+  }
+  .product-items {
+    width: 135px;
+  }
+  .cart__products {
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .panel-container {
+    width: 100%;
+  }
+  .product-items {
+    margin: 5px;
+  }
+  .footer__btn button {
+    font-size: 1em;
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .footer__btn button {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 801px) {
+  .panel-container {
+    width: 55%;
+  }
+  .product-items {
+    margin: 5px;
+  }
 }
 </style>

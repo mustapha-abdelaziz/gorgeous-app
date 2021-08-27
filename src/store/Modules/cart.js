@@ -56,7 +56,17 @@ export default {
   getters: {
     cart(state, getters, rootGetters) {
       let newArr = [];
+      //let firstarr
       let prodArr = rootGetters.prods.products;
+
+/*       newArr = prodArr.filter((el, ind, arr)=>{
+        firstarr=state.cartItems.items.filter((element, index, array)=>{
+          return array[index].id === arr[ind].id
+        })
+      }, {'741ee5350bee4e68acb81cc210f0b987'})
+
+      console.log(33333,firstarr,newArr); */
+
       for (let i = 0; i < prodArr.length; i++) {
         for (let j = 0; j < state.cartItems.items.length; j++) {
           if (prodArr[i].id === state.cartItems.items[j].id) {
@@ -64,7 +74,7 @@ export default {
             newArr.push(prodArr[i]);
           }
         }
-      }
+      } 
       let cartProducts = {
         items: newArr,
         total: state.cartItems.total,

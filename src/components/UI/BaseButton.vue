@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style scoped>
@@ -15,7 +13,7 @@ export default {
   display: block;
   font-size: 0.8em;
   color: #000000;
-  line-height: 46px;
+  line-height: 35px;
   letter-spacing: 1.5px;
   background-color: #ffffff;
   font-weight: 700;
@@ -38,5 +36,18 @@ button:disabled {
 button:disabled:hover {
   background: #fafafa;
   color: #d9d9d9;
+}
+
+@media screen and (max-width: 800px) {
+  .btn {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .btn {
+    height: 36px;
+    font-size: 0.7em;
+  }
 }
 </style>

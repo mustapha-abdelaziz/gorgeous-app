@@ -10,22 +10,26 @@
       <base-badge v-if="product.badge">{{ product.badge }}</base-badge>
     </div>
     <div class="container__caption">
-      <h3 class="caption__title">{{ product.title }}</h3>
-      <p class="caption__desc">{{ product.desc }}</p>
-      <div class="caption__price">
-        <span class="price__new">${{ product.price }}</span>
-        <span class="price__old" v-if="product.oldPrice"
-          >${{ product.oldPrice }}</span
+      <div>
+        <h3 class="caption__title">{{ product.title }}</h3>
+        <p class="caption__desc">{{ product.desc }}</p>
+      </div>
+      <div>
+        <div class="caption__price">
+          <span class="price__new">${{ product.price }}</span>
+          <span class="price__old" v-if="product.oldPrice"
+            >${{ product.oldPrice }}</span
+          >
+        </div>
+        <base-button
+          :disabled="product.qty == 0"
+          @click="
+            addProduct(product.id, product.price);
+            openPanel();
+          "
+          >Add to Cart</base-button
         >
       </div>
-      <base-button
-        :disabled="product.qty == 0"
-        @click="
-          addProduct(product.id, product.price);
-          openPanel();
-        "
-        >Add to Cart</base-button
-      >
     </div>
   </div>
 </template>
@@ -53,8 +57,8 @@ export default {
   position: relative;
   overflow: hidden;
   margin: 10px;
-  min-width: 220px;
-  max-width: 310px;
+  min-width: 210px;
+  max-width: 240px;
   width: 100%;
   color: #333333;
   text-align: center;
@@ -78,19 +82,25 @@ export default {
 .image__img {
   object-fit: cover;
   object-position: center center;
-  width: 310px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
 .container__caption {
-  padding: 20px 15px 15px;
+  padding: 10px;
   margin-bottom: 10px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .caption__title,
 .caption__desc {
   margin: 0;
   text-align: left;
+  white-space: normal;
+  font-size: 1.1em;
 }
 .caption__title {
   font-weight: 700;
@@ -107,7 +117,7 @@ export default {
   align-items: center;
   justify-content: flex-end;
   font-size: 1.2em;
-  margin-bottom: 1rem;
+  margin-bottom: .5em;
 }
 .price__old {
   font-size: 0.8em;
@@ -119,5 +129,41 @@ export default {
 
 .caption__price span {
   margin-left: 0.3rem;
+}
+
+@media screen and (max-width: 425px) {
+  .card-container {
+    min-width: 100px;
+    max-width: 110px;
+  }
+
+  .container__caption {
+    padding: 0 10px;
+    height: 170px;
+  }
+
+  .caption__desc,
+  .caption__title {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    min-width: 100px;
+    max-width: 120px;
+  }
+
+  .caption__desc,
+  .caption__title {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .card-container {
+    min-width: 150px;
+    max-width: 170px;
+  }
 }
 </style>

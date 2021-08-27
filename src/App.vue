@@ -1,30 +1,39 @@
 <template>
   <the-header></the-header>
   <div id="container">
-    <carousel class="carousel" title="SHOP OUR FEATURED PRODUCTS">
-      <base-card v-for="item in products" :key="item.id" :product="item">
+    <carousel class="carousel" title="OUR FEATURED PRODUCTS">
+      <base-card
+        v-for="item in featuredProducts"
+        :key="item.id"
+        :product="item"
+      >
       </base-card>
     </carousel>
-    <carousel class="carousel" title="Skin Care">
-      <base-card v-for="item in products" :key="item.id" :product="item">
+    <product-list  title="Skin Care">
+      <base-card v-for="item in skinProducts" :key="item.id" :product="item">
       </base-card>
-    </carousel>
+    </product-list>
     <base-panel></base-panel>
   </div>
+  
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import Carousel from "./components/UI/Carousel.vue";
 import BasePanel from "./components/UI/BasePanel.vue";
-import TheHeader from "./components/layouts/TheHeader.vue";
 
 export default {
   name: "App",
   components: {
     Carousel,
     BasePanel,
-    TheHeader,
+  },
+  data() {
+    return {
+      skinProducts: [],
+      featuredProducts: [],
+    };
   },
   computed: {
     ...mapGetters("prods", ["products"]),
@@ -35,13 +44,26 @@ export default {
     if (localStorage.localItems) {
       this.$store.dispatch("cart/getLocalItems");
     }
+
+    this.products.filter((el) => {
+      if (el.category === "skincare") {
+        this.skinProducts.push(el);
+      }
+      if (el.featured) {
+        this.featuredProducts.push(el);
+      }
+    });
+
   },
 };
 </script>
 
 <style>
+
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap");
 
 #app {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;

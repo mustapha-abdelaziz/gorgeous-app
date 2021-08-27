@@ -1,29 +1,25 @@
 <template>
-  <div class="header">
-    <a href="#"><h1>Gorgeous</h1></a>
-    <div class="icon-container">
-      <a href="#" @click.prevent="openPanel">
-        <span class="circle ">{{ cart.qty }} </span>
-        <span class="shop-bag material-icons">
-          local_mall
-        </span>
-      </a>
+  <footer class="flex footer">
+    <div class="flex">
+      <div class="logo">
+        <a href="#"><h1>Gorgeous</h1></a>
+      </div>
     </div>
-  </div>
+
+    <div class="flex" width="100%">
+      <p color="white" style="display:inline;">
+        Created with
+        <span class="material-icons" style="">
+          favorite
+        </span>
+        by Mustafa
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  computed: {
-    ...mapGetters("cart", ["cart"]),
-  },
-  methods: {
-    openPanel() {
-      this.$store.dispatch("openPanel");
-    },
-  },
-};
+export default {};
 </script>
 
 <style scoped>
@@ -32,19 +28,21 @@ export default {
   box-sizing: border-box;
   margin: 0;
 }
-.header {
-  position: fixed;
+
+.logo {
+  font-size: 2em;
+}
+.footer {
   width: 100vw;
   padding: 1rem 7em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  border-bottom: 1px solid #d9d9d9;
-  background-color: white;
+  border-top: 3px solid red;
 }
 
-.header h1 {
+.footer h1 {
   font-family: "DM Serif Display";
   text-decoration: none;
   color: black;
@@ -88,20 +86,28 @@ a {
   position: relative;
 }
 
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
 @media screen and (max-width: 1300px) {
-  .header {
+  .footer {
     padding: 1em 3em;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .header {
+  .footer {
     padding: 1em 2rem;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .header {
+  .footer {
     padding: 1em 1.5em;
   }
   .shop-bag {

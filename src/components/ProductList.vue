@@ -1,14 +1,7 @@
 <template>
   <div class="carousel__container">
     <div class="titles">
-      <span class="titles__text">{{ title }}</span>
-
-      <a href="#" class="titles__link"><span>shop all products</span></a>
-      <a href="#" class="titles__arrow-icon"
-        ><span class="material-icons">
-          chevron_right
-        </span></a
-      >
+      <span class="titles__text">{{title}}</span>
     </div>
     <div class="carousel">
       <slot></slot>
@@ -18,28 +11,27 @@
 
 <script>
 export default {
-  props: ["title"],
+  props:['title']
 };
 </script>
 
 <style scoped>
 .carousel__container {
+  
   display: block;
   overflow: hidden;
 }
 .carousel {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   background: white;
-  overflow-x: scroll;
   margin: 0;
-  white-space: nowrap;
 }
 
 .titles {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: 12px;
 }
 
@@ -50,11 +42,6 @@ export default {
 .titles__link {
   color: inherit;
   text-transform: capitalize;
-  margin-bottom: 5px;
-}
-
-.titles__arrow-icon{
-  display: none;
 }
 
 * {
@@ -76,20 +63,6 @@ export default {
   border: 6px solid #ffffff;
 }
 
-@media screen and (max-width: 480px) {
-  .titles__text {
-    font-size: 0.8em;
-  }
 
-  .titles {
-    margin: 3px 10px;
-  }
 
-  .titles__link {
-    display: none;
-  }
-  .titles__arrow-icon{
-    display:block;
-  }
-}
 </style>

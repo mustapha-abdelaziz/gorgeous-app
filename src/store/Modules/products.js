@@ -1,10 +1,10 @@
 export default {
-  namespaced:true,
-  state:{
+  namespaced: true,
+  state: {
     //id uses GUID (Globally Unique Identifier)
-    products:[
+    products: [
       {
-        id:"b4ea1b2b703e4c8fb422d88b918893a9",
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
         image: {
           src:
             "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
@@ -14,10 +14,11 @@ export default {
         desc: "niacinamide + zinc serum",
         price: 28,
         qty: 0,
-        category:"skincare"
+        category:'skincare',
+        featured:true
       },
       {
-        id:"741ee5350bee4e68acb81cc210f0b987",
+        id: "741ee5350bee4e68acb81cc210f0b987",
         badge: "Top Rated",
         image: {
           src:
@@ -29,9 +30,10 @@ export default {
         price: 65,
         oldPrice: 80.95,
         qty: 10,
+        featured:true
       },
       {
-        id:"c3a8fd5d49c04deb8e195ff535f95c8f",
+        id: "c3a8fd5d49c04deb8e195ff535f95c8f",
         badge: "New!",
         image: {
           src:
@@ -42,9 +44,10 @@ export default {
         desc: "luminous bronzer crème",
         price: 20,
         qty: 6,
+        featured:true
       },
       {
-        id:"5866c20be9384a3395e5a4869849eabf",
+        id: "5866c20be9384a3395e5a4869849eabf",
         badge: "Save $30",
         image: {
           src:
@@ -56,9 +59,10 @@ export default {
         price: 90,
         oldPrice: 120,
         qty: 9,
+        featured:true
       },
       {
-        id:"c8796296fdf74480a430c9444e067d7c",
+        id: "c8796296fdf74480a430c9444e067d7c",
         badge: "Save $10",
         image: {
           src:
@@ -70,9 +74,10 @@ export default {
         price: 40,
         oldPrice: 50,
         qty: 0,
+        featured:true
       },
       {
-        id:"5c8bcf20f1634599ac05bde6f65f4341",
+        id: "5c8bcf20f1634599ac05bde6f65f4341",
         badge: "New!",
         image: {
           src:
@@ -83,12 +88,128 @@ export default {
         desc: "all three serums",
         price: 25,
         qty: 15,
-      }
+        featured:true
+      },
+
+
+
+
+
+
+
+
+
+
+      {
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },{
+        id: "b4ea1b2b703e4c8fb422d88b918893a9",
+        image: {
+          src:
+            "https://images.ctfassets.net/p3w8f4svwgcg/5jezQz2OgrHmY2G2aPxOYJ/60f8e2ed5e86eaa52ad0f7e385dc32b6/SuperPure_0_Global_01.jpg?w=1400&q=80&fm=webp",
+          alt: "niacinamide_zinc_serum",
+        },
+        title: "Super Pure",
+        desc: "niacinamide + zinc serum",
+        price: 28,
+        qty: 0,
+        category:'skincare',
+        featured:true
+      },
     ]
   },
-  getters:{
-    products(state){
-      return state.products
-    }
-  }
+  getters: {
+    products(state) {
+      return  state.products
+    },
+  },
 };
